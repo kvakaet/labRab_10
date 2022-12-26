@@ -1,18 +1,20 @@
-#!usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 if __name__ == '__main__':
-    ABC = {'poiuytrewqlkjhgfdsamnbvcxz'}
+    # 1
+    str_in = input("Введите строку: ").lower()
+    a = set(str_in.replace(' ', ''))
+    vowels = set("aeiouyаоуыэеёиюяи")
+    count = 0
+    for i in str_in:
+        if i in vowels:
+            count += 1
+    print('Количество глассных в предложении = ', count)
 
-    A = {'c', 'f', 'g', 'k'}
-    B = {'e', 'f', 'g', 'm', 'q'}
-    C = {'h', 'i', 'r', 'w', 'x'}
-    D = {'b', 'e', 'j', 'u', 'z'}
-
-    X = A.difference(B).intersection(C.union(D))
-
-    not_B = ABC.difference(B)
-    not_C = ABC.difference(C)
-    Y = A.difference(D).union(not_C.difference(not_B))
-    print(X)
-    print(Y)
+    # 2
+    a = input('Введите строку\n')
+    s1 = set(a.replace(' ', ''))
+    a = input('Введите строку\n')
+    s2 = set(a.replace(' ', ''))
+    print('Количество общих символов = ', s1.intersection(s2))
